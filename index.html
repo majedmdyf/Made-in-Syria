@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Made in Syria — قائمة المنتجات</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/pdfmake@0.2/build/pdfmake.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfmake@0.2/build/vfs_fonts.js"></script>
+    <!-- SheetJS (اختياري لـ Excel) -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="brand" aria-label="الشعار">
+        <div class="brand-badge" aria-hidden="true"></div>
+        <div>
+          <div>Made in Syria</div>
+          <div class="muted">دعم المنتج المحلي واستيراد مسؤول</div>
+        </div>
+      </div>
+
+      <label class="search" aria-label="بحث">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <input id="search" type="search" placeholder="ابحث باسم المنتج أو الكود أو التصنيف..." autocomplete="off" />
+      </label>
+
+      <button id="themeToggle" class="toggle" type="button" aria-label="تبديل الوضع">نهاري</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist" aria-label="الأقسام">
+      <button class="tab" id="tab-syrian" role="tab" aria-controls="panel" aria-selected="true" data-section="syrian">منتجات سورية</button>
+      <button class="tab" id="tab-global" role="tab" aria-controls="panel" aria-selected="false" data-section="global">منتجات عالمية</button>
+    </div>
+
+    <!-- Categories -->
+    <div id="categories" class="categories" aria-label="التصنيفات"></div>
+
+    <!-- Products -->
+    <section id="panel" class="section" role="tabpanel" aria-labelledby="tab-syrian">
+      <div id="grid" class="grid"></div>
+    </section>
+  </div>
+
+   <script src="app.js"></script>
+</body>
+</html>
