@@ -83,7 +83,7 @@ function cardHTML(p) {
         <div class="actions">
           <input type="number" class="qty" min="1" value="1" aria-label="الكمية">
           <a class="order-btn" target="_blank"
-             href="https://wa.me/${(p.whatsapp)}?text=${encodeURIComponent(waText)}"
+             href="https://wa.me/936936870900/?text=${encodeURIComponent(waText)}"
           >طلب عبر واتساب</a>
         </div>
       </div>
