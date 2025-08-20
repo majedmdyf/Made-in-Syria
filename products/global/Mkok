@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>صابون غار حلبي</title>
+</head>
+<body>
+  <script id="product" type="application/json">
+  {
+    "name": "صابون غار حلبي",
+    "sku": "SY-002",
+    "category: " شخصية",
+    "origin": "حلب",
+    "price": 2.2,
+    "currency": "USD",
+    "tags": ["طبيعي", "تراثي"],
+    "WhatsApp": "963936870900",
+    "image": "products/syrian/images/soap.jpg"
+  }
+  </script>
+</body>
+</html>
