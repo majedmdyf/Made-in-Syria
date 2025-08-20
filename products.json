@@ -6,7 +6,7 @@
     },
     {
       "base": "products/global/",
-      "files": ["machine.html"]
+      "files": ["majed.html"]
     }
   ]
 }
