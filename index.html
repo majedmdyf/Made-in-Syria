@@ -1,50 +1,31 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Made in Syria — قائمة المنتجات</title>
-<link rel="stylesheet" href="styles.css">
-<script src="https://cdn.jsdelivr.net/npm/pdfmake@0.2/build/pdfmake.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pdfmake@0.2/build/vfs_fonts.js"></script>
-    <!-- SheetJS (اختياري لـ Excel) -->
-    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Made in Syria — المنتجات</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <div class="header">
-      <div class="brand" aria-label="الشعار">
-        <div class="brand-badge" aria-hidden="true"></div>
-        <div>
-          <div>Made in Syria</div>
-          <div class="muted">دعم المنتج المحلي واستيراد مسؤول</div>
-        </div>
-      </div>
-
-      <label class="search" aria-label="بحث">
-        <span class="icon" aria-hidden="true">🔎</span>
-        <input id="search" type="search" placeholder="ابحث باسم المنتج أو الكود أو التصنيف..." autocomplete="off" />
-      </label>
-
-      <button id="themeToggle" class="toggle" type="button" aria-label="تبديل الوضع">نهاري</button>
+  <header class="header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <h1>Made in Syria</h1>
     </div>
 
-    <!-- Tabs -->
-    <div class="tabs" role="tablist" aria-label="الأقسام">
-      <button class="tab" id="tab-syrian" role="tab" aria-controls="panel" aria-selected="true" data-section="syrian">منتجات سورية</button>
-      <button class="tab" id="tab-global" role="tab" aria-controls="panel" aria-selected="false" data-section="global">منتجات عالمية</button>
+    <div class="controls">
+      <input id="search" class="search" type="search" placeholder="ابحث عن منتج..." />
+      <select id="filter" class="filter">
+        <option value="all">كل الفئات</option>
+      </select>
+      <button id="themeToggle" class="theme-toggle">نهاري</button>
     </div>
+  </header>
 
-    <!-- Categories -->
-    <div id="categories" class="categories" aria-label="التصنيفات"></div>
+  <main>
+    <section id="products" class="grid"></section>
+  </main>
 
-    <!-- Products -->
-    <section id="panel" class="section" role="tabpanel" aria-labelledby="tab-syrian">
-      <div id="grid" class="grid"></div>
-    </section>
-  </div>
-
-   <script src="app.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
