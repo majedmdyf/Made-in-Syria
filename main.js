@@ -58,6 +58,7 @@ function cardHTML(p) {
   const priceStr = p.price !== '' ? `${p.price} ${p.currency || ''}`.trim() : 'السعر عند الطلب';
   const waText = [
     'طلب شراء:',
+    
     `المنتج: ${p.name}`,
     p.sku ? `الكود: ${p.sku}` : ' ',
     p.origin ? `المنشأ: ${p.origin}` : ' ',
