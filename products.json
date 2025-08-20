@@ -1,6 +1,12 @@
 {
-  "files": [
-    "soap.html",
-    "olive.html"
+  "sections": [
+    {
+      "base": "products/syrian/",
+      "files": ["soap.html", "olive.html"]
+    },
+    {
+      "base": "products/global/",
+      "files": ["machine.html"]
+    }
   ]
 }
