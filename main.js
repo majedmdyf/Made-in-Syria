@@ -62,7 +62,7 @@ function cardHTML(p) {
     p.sku ? `الكود: ${p.sku}` : '',
     p.origin ? `المنشأ: ${p.origin}` : '',
     p.price !== '' ? `السعر: ${priceStr}` : '',
-    p.url ? `رابط: ${p.url}` : ''
+    p.url ? `رابط: ${location.origin}${location.pathname.replace(/[^/]+$/, '')}${p.url}` : ''
   ].filter(Boolean).join('\n');
 
   return `
@@ -83,7 +83,7 @@ function cardHTML(p) {
         <div class="actions">
           <input type="number" class="qty" min="1" value="1" aria-label="الكمية">
           <a class="order-btn" target="_blank"
-             href="https://wa.me/963936870900/?text=${(waText)}"
+             href="https://wa.me/${encodeURIComponent(p.whatsapp)}?text=${encodeURIComponent(waText)}"
           >طلب عبر واتساب</a>
         </div>
       </div>
@@ -120,11 +120,11 @@ function render() {
     const qty = card.querySelector('.qty');
     const link = card.querySelector('.order-btn');
     const base = new URL(link.href);
-    const originalMsg = (base.searchParams.get('text') || '');
+    const originalMsg = decodeURIComponent(base.searchParams.get('text') || '');
     link.addEventListener('click', (e) => {
       const n = Math.max(1, parseInt(qty.value || '1', 10));
       const msg = originalMsg + (n ? `\nالكمية: ${n}` : '');
-      base.searchParams.set('text',(msg));
+      base.searchParams.set('text', encodeURIComponent(msg));
       link.href = base.toString();
     });
   });
