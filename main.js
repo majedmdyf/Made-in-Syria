@@ -124,7 +124,7 @@ function render() {
     link.addEventListener('click', (e) => {
       const n = Math.max(1, parseInt(qty.value || '1', 10));
       const msg = originalMsg + (n ? `\nالكمية: ${n}` : '');
-      base.searchParams.set('text', encodeURIComponent(msg));
+      base.searchParams.set('text',(msg));
       link.href = base.toString();
     });
   });
