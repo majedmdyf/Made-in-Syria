@@ -120,7 +120,7 @@ function render() {
     const qty = card.querySelector('.qty');
     const link = card.querySelector('.order-btn');
     const base = new URL(link.href);
-    const originalMsg = decodeURIComponent(base.searchParams.get('text') || '');
+    const originalMsg = (base.searchParams.get('text') || '');
     link.addEventListener('click', (e) => {
       const n = Math.max(1, parseInt(qty.value || '1', 10));
       const msg = originalMsg + (n ? `\nالكمية: ${n}` : '');
