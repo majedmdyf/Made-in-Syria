@@ -62,7 +62,7 @@ function cardHTML(p) {
     p.sku ? `الكود: ${p.sku}` : '',
     p.origin ? `المنشأ: ${p.origin}` : '',
     p.price !== '' ? `السعر: ${priceStr}` : '',
-    p.url ? `رابط: ${location.origin}${location.pathname.replace(/[^/]+$/, '')}${p.url}` : ''
+    p.url ? `رابط: ${p.url}` : ''
   ].filter(Boolean).join('\n');
 
   return `
