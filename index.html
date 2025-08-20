@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Made in Syria — المنتجات</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
@@ -14,7 +14,7 @@
     </div>
 
     <div class="controls">
-      <input id="search" class="search" type="search" placeholder="ابحث عن منتج..." />
+      <input id="search" class="search" type="search" placeholder="ابحث باسم المنتج أو الكود..." />
       <select id="filter" class="filter">
         <option value="all">كل الفئات</option>
       </select>
@@ -23,7 +23,7 @@
   </header>
 
   <main>
-    <section id="products" class="grid"></section>
+    <section id="products" class="grid" aria-live="polite"></section>
   </main>
 
   <script src="main.js"></script>
