@@ -59,10 +59,10 @@ function cardHTML(p) {
   const waText = [
     'طلب شراء:',
     `المنتج: ${p.name}`,
-    p.sku ? `الكود: ${p.sku}` : '',
-    p.origin ? `المنشأ: ${p.origin}` : '',
-    p.price !== '' ? `السعر: ${priceStr}` : '',
-    p.url ? `رابط: ${location.origin}${location.pathname.replace(/[^/]+$/, '')}${p.url}` : ''
+    p.sku ? `الكود: ${p.sku}` : ' ',
+    p.origin ? `المنشأ: ${p.origin}` : ' ',
+    p.price !== ' ' ? `السعر: ${priceStr}` : ' ',
+    p.url ? `رابط: ${location.origin}${location.pathname.replace(/[^/]+$/, '')}${p.url}` : ' '
   ].filter(Boolean).join('\n');
 
   return `
@@ -123,7 +123,7 @@ function render() {
     const originalMsg = decodeURIComponent(base.searchParams.get('text') || '');
     link.addEventListener('click', (e) => {
       const n = Math.max(1, parseInt(qty.value || '1', 10));
-      const msg = originalMsg + (n ? `\nالكمية: ${n}` : '');
+      const msg = originalMsg + (n ? `\nالكمية: ${n}` : ' ');
       base.searchParams.set('text', encodeURIComponent(msg));
       link.href = base.toString();
     });
